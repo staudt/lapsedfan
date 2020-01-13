@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Lapsed Fan's Random Names for Wrestling</title>
+    <style type="text/css">
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+    #names {
+        text-transform: capitalize;
+        font-size: 24px;
+    }
+    li {
+        margin: 10px;
+    }
+    button {
+        margin-left: 24px;
+        background-color: #a73f2d;
+        font-size: 20px;
+        padding: 9px 23px;
+        color: #ffffff;
+    }
+    </style>
+</head>
+<body>
+    <h1>The Lapsed Fan's Random Name Generator for Wrestling</h1>
+    <button onclick="generateNames(6);">Generate More</button>
+    <br>
+    <div id="names"></div>
+
+    If this doesn't seem useful to you, then you haven't been listening to the <a href="https://podbay.fm/podcast/1044102900">Lapsed Fan Podcast</a>.
+
+    <script>
+        function getRandom(list) {
+            return Math.floor( Math.random()*list.length);
+        }
+
+        function generateNames(count) {
+            var first = [
+                'counterfeit',
+                'choreographed',
+                'agreed upon',
+                'pretend',
+                'fake',
+                'bullshit',
+                'synchronized',
+                'smoke-filled arena',
+                'flippy shit',
+                'make believe',
+                'southern',
+                'forged',
+                'counterfeit',
+                'carny',
+                'greasy',
+                'hoax',
+                'imitation',
+                'dummy',
+                'phony',
+                'knockoff',
+                'ripoff',
+                'forged',
+                'fraudulent',
+                'bogus',
+                'pseudo',
+                'dud',
+                'simulated',
+                'staged',
+            ];
+            var second = [
+                'fighting',
+                'conflict',
+                'contests',
+                'bullshit',
+                'pugilism',
+                'theatrics',
+                'athletics',
+                'aggression',
+                'wrasslin',
+                'flippy shit',
+                'restholds',
+                'sparring',
+                'slugfest',
+                'combat',
+                'business',
+                'psychology',
+                'shit',
+                'brawling',
+                'violence',
+                'melee ',
+                'skirmish',
+                'struggle',
+            ];
+            var names = '<ol>';
+            for (var i=0;i<count;i++) {
+                num = getRandom(first);
+                firstName = first[num];
+                //first.splice(num, 1);
+                num = getRandom(second);
+                secondName = second[num];
+                //second.splice(num, 1);
+                names = names + '<li>' + firstName + ' ' + secondName + '</li>';
+            }
+            name = name + '</ol>';
+            document.getElementById("names").innerHTML =names;
+        }
+        generateNames(6);
+    </script>
+</body>
+</html>
